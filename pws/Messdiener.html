@@ -5,7 +5,7 @@
 
 <meta charset="utf-8">
 
-<meta name="viewport" content="width=1024">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
 <title>Messdiener Einführung 2025 Jeopardy Template</title>
 <meta name="description" content="Wie heißen die Standarddienste um Gottesdienst?, Wie viel Liter Messwein wurde letztes Jahr in der Pfarrei verbraucht?, Wo wohnt/lebt der Papst?, Schätzfrage: wie viel Geld haben die Sternsinger dieses Jahr in Deutschland gesammelt?" />
@@ -13,6 +13,8 @@
 <meta name="google-site-verification" content="UYS7arlGlbDobqQSsucWwkbZyiC-6_cCWlUn9Eb5b2M" />
 <link rel="shortcut icon" href="/static/1730074337/favicon.ico" type="image/x-icon" />
 <link rel="icon" href="/static/1730074337/favicon.ico" type="image/x-icon" />
+<link rel="manifest" href="/manifest.json">
+<meta name="theme-color" content="#2a3698">
 
 
 
@@ -380,9 +382,9 @@ template {
 }
 
 body {
-    background-color:#2a3698;    
-    height:100%;
-    font-family:Verdana, Arial, Helvetica, sans-serif;
+	background-color:#2a3698;	
+	height:100%;
+	font-family:Verdana, Arial, Helvetica, sans-serif;
     overflow-y:hidden;
 }
 
@@ -391,9 +393,9 @@ body {
 }
 
 input, textarea, select {
-    display:block;
-    font-family:Verdana, Arial, Helvetica, sans-serif;
-    margin:auto;
+	display:block;
+	font-family:Verdana, Arial, Helvetica, sans-serif;
+	margin:auto;
 }
 
 .hide {
@@ -401,14 +403,14 @@ input, textarea, select {
 }
 
 h3 {
-    font-size:20px;
+	font-size:20px;
 }
 
 h3, .point-cell {
-    color:#ffff5f;
-    color:#fff;
-    text-align:center;
-    font-weight:bold;
+	color:#ffff5f;
+	color:#fff;
+	text-align:center;
+	font-weight:bold;
 }
 
 .modal-wrapper {
@@ -859,7 +861,7 @@ kbd
     padding:10px;
     background: linear-gradient(to top, #1d2675 0%,#2a3698 100%);
     position:relative;
-    transition: .1s;
+	transition: .1s;
     z-index:1;
     transform-origin:center left;
     font-size:12px;
@@ -877,7 +879,7 @@ kbd
 
 .click-to-zoom  {
     opacity:0;
-    transition: .3s;
+	transition: .3s;
     position:absolute;
     top:0;
     right:0;
@@ -925,7 +927,7 @@ img, iframe {
     overflow:hidden;
     position:relative;
     background-color:#2a3698;
-    transition: .3s;
+	transition: .3s;
     flex:1;
 }
 
@@ -982,7 +984,7 @@ img, iframe {
 
 .cell-group {
     backface-visibility:hidden;
-    transform-style: preserve-3d;
+	transform-style: preserve-3d;
 }
 
 .cell {
@@ -993,8 +995,8 @@ img, iframe {
     text-align: center;
     color:#fff;
     backface-visibility:hidden;
-    perspective: 1000px;
-    transform-style: preserve-3d;
+	perspective: 1000px;
+	transform-style: preserve-3d;
     -webkit-perspective: 0;
     -webkit-backface-visibility: hidden;
     width:100%;
@@ -1006,11 +1008,11 @@ img, iframe {
 }
 
 .cell.back {
-    transform: rotateY(180deg);
+	transform: rotateY(180deg);
 }
 
 .cell.front {
-    z-index:2;
+	z-index:2;
 }
 
 .cell.back, .cell.front {
@@ -1019,7 +1021,7 @@ img, iframe {
 }
 
 .cell.back, .cell.front, .cell-group, .category {
-    transition: .3s;
+	transition: .3s;
     will-change: transform;
 }
 
@@ -1034,11 +1036,11 @@ img, iframe {
 }
 
 .cell-group:hover .front  {
-    transform: rotateY(180deg);
+	transform: rotateY(180deg);
 }
 
 .cell-group:hover .back  {
-    transform: rotateY(0deg);
+	transform: rotateY(0deg);
 }
 
 .cell-group:hover .back,
@@ -1048,7 +1050,7 @@ img, iframe {
 
 .cell-group:hover .back,
 .cell-group:hover .front {
-    transition: .6s;
+	transition: .6s;
 }
 
 .cell-group.empty {
@@ -1110,18 +1112,18 @@ img, iframe {
 
 
 function debounce(func, wait, immediate) {
-    var timeout;
-    return function() {
-        var context = this, args = arguments;
-        var later = function() {
-            timeout = null;
-            if (!immediate) func.apply(context, args);
-        };
-        var callNow = immediate && !timeout;
-        clearTimeout(timeout);
-        timeout = setTimeout(later, wait);
-        if (callNow) func.apply(context, args);
-    };
+	var timeout;
+	return function() {
+		var context = this, args = arguments;
+		var later = function() {
+			timeout = null;
+			if (!immediate) func.apply(context, args);
+		};
+		var callNow = immediate && !timeout;
+		clearTimeout(timeout);
+		timeout = setTimeout(later, wait);
+		if (callNow) func.apply(context, args);
+	};
 };
 
 function ready(fn) {
@@ -1438,11 +1440,11 @@ function matches(el, selector) {
 }
 
 function indexInParent(child) {
-    var i = 0;
-    while( (child = child.previousElementSibling) != null ) {
-      i++;
-    }
-    return i;
+	var i = 0;
+	while( (child = child.previousElementSibling) != null ) {
+	  i++;
+	}
+	return i;
 }
 
 
@@ -3001,7 +3003,16 @@ function mini(){
 
     
 
-
+    <script>
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', () => {
+                navigator.serviceWorker.register('/service-worker.js')
+                    .then((registration) => console.log('Service Worker registriert:', registration))
+                    .catch((error) => console.log('Service Worker Registrierung fehlgeschlagen:', error));
+            });
+        }
+        </script>
+        
 
 </body>
 </html>
