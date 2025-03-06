@@ -1,3 +1,3 @@
 # messdiener.github-io
 
-./FFZ 2025/
+[Link to Vorfahrt 2025](./FFZ%202025/Vorfahrt/Vorfahrt%202025.html)
